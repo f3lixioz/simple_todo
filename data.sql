@@ -2,11 +2,11 @@ CREATE DATABASE todo;
 \c todo;
 CREATE TABLE users (
     id SERIAL,
-    name VARCHAR(255),
+    name VARCHAR(255)
 );
 CREATE TABLE passwords (
     id SERIAL,
-    user_id,
+    user_id INTEGER,
     password VARCHAR(255)
 );
 CREATE TABLE todos (
@@ -22,3 +22,9 @@ CREATE TABLE todos_categories (
     todos_id INTEGER,
     categories_id INTEGER
 );
+
+INSERT INTO categories (name) VALUES ('Work');
+INSERT INTO categories (name) VALUES ('Fun');
+INSERT INTO categories (name) VALUES ('Resturants');
+INSERT INTO categories (name) VALUES ('Groceries');
+INSERT INTO categories (name) VALUES ('Books');
