@@ -28,3 +28,28 @@ app.get('/categories', (req,res) => {
         res.json(data.rows);
     })
 })
+
+app.get('/todos', (req,res) => {
+    //db query statement
+    db.query("SELECT * FROM todos;").then(data => {
+        res.status(200);
+        res.json(data.rows);
+    })
+})
+
+app.post('/todos', (req,res) => {
+    console.log(req.body)
+    db.query(`Insert into todos(task) VALUES ('${req.body.task}');`)
+    .then(data => {
+        console.log(data);
+        res.status(401);
+        res.end();
+    })
+});
+
+app.post('/todos/delete/:id', (req,res) => {
+    console.log(req.params.id)
+    db.query(`DELETE FROM todos where id='${req.params.id}';`)
+    .then(res.status(200));
+    res.end();
+})

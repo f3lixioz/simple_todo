@@ -1,17 +1,17 @@
 import {useEffect, useState} from "react";
 
-const Categories=()=>{
+const Todos=()=>{
 
-    let [categories,setCategories] = useState(['default']);
+    let [todos,setTodos] = useState(['default']);
 
     const fetchData = async () => {
-        const response = await fetch(`http://localhost:3001/categories`);
+        const response = await fetch(`http://localhost:3001/todos`);
         const data = await response.json();
         const temp = [];
         const temp2 = await data.forEach(element => {
-            temp.push(<p>{element.name}</p>);
+            temp.push(<p>{element.task}</p>);
         })
-        setCategories(temp);
+        setTodos(temp);
     };
     
 
@@ -20,7 +20,7 @@ const Categories=()=>{
     }, []);
     
       
-    return(<div>{categories}</div>);
+    return(<div>{todos}</div>);
 }
 
-export default Categories;
+export default Todos;

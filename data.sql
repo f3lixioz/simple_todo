@@ -29,3 +29,4 @@ INSERT INTO categories (name) VALUES ('Resturants');
 INSERT INTO categories (name) VALUES ('Groceries');
 INSERT INTO categories (name) VALUES ('Books');
 INSERT INTO categories (name) VALUES ('Games');
+INSERT INTO categories (name) VALUES ('Default');
