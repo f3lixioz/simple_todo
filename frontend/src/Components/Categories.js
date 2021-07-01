@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
-
+import Chip from '@material-ui/core/Chip';
+  
 const Categories=()=>{
 
     let [categories,setCategories] = useState(['default']);
@@ -9,7 +10,9 @@ const Categories=()=>{
         const data = await response.json();
         const temp = [];
         const temp2 = await data.forEach(element => {
-            temp.push(<p>{element.name}</p>);
+            temp.push(
+                <Chip size="small" label={element.name} key={element.id}/>
+            );
         })
         setCategories(temp);
     };

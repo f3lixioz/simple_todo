@@ -1,18 +1,19 @@
 import './App.css';
-import Categories from './Components/Categories.js'
 import Todos from './Components/Todos.js'
-import AddTodo from './Components/AddTodo.js'
+import Paper from '@material-ui/core/Paper';
+import NavBar from './Components/NavBar';
+import { Container } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 function App() {
   return (
-    <div className="App">
-      <Categories />
+    
+    <Container>
+      <NavBar />
       <Todos />
-      <AddTodo />
-    </div>
+    </Container>
   );
 }
-
 
 
 export default App;
